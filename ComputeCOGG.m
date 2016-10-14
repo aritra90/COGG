@@ -7,7 +7,8 @@ sq_origval = origval.^2;
 %We take the squared correlation as we want to capture the magnitude, not
 %the direction of the correlation.
 [maxval,maxidx] = max(sq_origval);
-if maxval(1) > maxval(2)
+if maxval(1) > maxval(2) %we are checking for the maximum correlation value,
+    %corresponding to PCs and Latitude/Longitude. 
     if maxidx == 1
         PC1_Lat = sq_origval(1,1);
         PC2_Long = sq_origval(2,2);
@@ -60,7 +61,7 @@ randcutoff =1; %this value decides how much of the Castes and Languages to
 %permute
 for iter = 1:1000 %We do this a 1000 times
     [r,c] = size(LangMat);
-    for i = 1:c
+    for i = 1:c %Randomly Permuting the rows of Language matrix
         randcutidx = randperm(floor(r*randcutoff));
         randidx = [randcutidx ((floor(r*randcutoff)+1):r) ];
         randlangmat(:,i) = LangMat(randidx,i);
@@ -70,7 +71,7 @@ for iter = 1:1000 %We do this a 1000 times
     end
     [r,c] = size(CasteMat);
     randcastevec = zeros(r,c);
-    for i = 1:c
+    for i = 1:c%Randomly Permuting the rows of Caste matrix
         randcutidx = randperm(floor(r*randcutoff));
         randidx = [randcutidx ((floor(r*randcutoff)+1):r) ];
         randcastevec(:,i) = CasteMat(randidx,i);

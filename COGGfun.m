@@ -23,7 +23,7 @@ if idx > 0
 else
     cut = c2; %If all the values are not close to 0, we consider all the components
 end
-newdiag1 = 1./el1(1:cut);
+newdiag1 = 1./el1(1:cut);%reciprocal of the singular values
 newS1 = diag(newdiag1);
 newD1 = U1(:,1:cut)*newS1*V1(:,1:cut)'; %The inverse matrix
 cogg1 = 0; cogg2 = 0;
@@ -35,4 +35,4 @@ for i = 1:c2
     %component and obtaining a linear combination for each sample
     cogg2 = cogg2 + ZCompFac(:,i)*sol_coeffs2(i);
 end
-CSC = [corr(ZPCs(:,1),cogg1)^2 corr(ZPCs(:,2),cogg2)^2]; 
+CSC = [corr(ZPCs(:,1),cogg1)^2 corr(ZPCs(:,2),cogg2)^2]; %computing the squared correlation of COGG
