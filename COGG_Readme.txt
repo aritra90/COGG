@@ -23,3 +23,20 @@ we extend both sides in CCA. We now consider top "p" principal components, inste
 Principal Components. We want to maximize the squared correlation of the Principal Component matrix and 
 the Geodemographic matrix. Canonical Correlation Analysis finds linear combinations of the variables 
 in the Genetics and Geodemographic matrices.
+
+Running COGG: 
+
+You have to clone/download the codes and run the COGG_Wrapper.m 
+Edit the COGG_Wrapper.m to include the paths to your files containing the Principal Components in the following
+format: SampleID PC1 PC2 PC3 PC4 PC5 .. PCp Population
+Where, SampleID is the id of each sample under study and the last column contains the population to which the 
+samples belong. The PC1-PCp, are the number of principal components under consideration. 
+
+Also include the link to the file containing external information of geographical coordinates and external 
+information which influence the genetics of those populations. Our methods needs a one-to-one relationship
+with the external factors and the sample. That is, each sample can belong to only one language group and caste 
+group in our case. 
+
+Also you have to edit the value of p and enter the desired number of principal components. 
+
+Run it as COGG_Wrapper from the command line. 
