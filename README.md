@@ -42,11 +42,12 @@ Also include the link to the file containing external information of geographica
 information which influence the genetics of those populations. Our methods needs a one-to-one relationship
 with the external factors and the sample. That is, each sample can belong to only one language group and caste 
 group in our case. 
-Our file is formatted as follows: 
+Our file is formatted as follows:
+
 ```` Population Name #ofSamples State/Province Region Language Caste Latitude Longitude Dataset ```` 
 
-Change line 
+Change line **44** in ````COGG_Wrapper.m```` according to the format that you are entering. For example, we have the geography, caste and language information in columns 5,6,7,8 in our format. Change the columns accordingly and note that, the first column should always be the population group name/annotation. 
 
-Also you have to edit the value of p and enter the desired number of principal components. 
+Also you have to edit the value of **p** and enter the desired number of principal components. 
 
-Run it as COGG_Wrapper from the command line. 
+Run it as COGG_Wrapper from the command line or MATLAB IDE. 
