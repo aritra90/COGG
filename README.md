@@ -27,17 +27,25 @@ the Geodemographic matrix. Canonical Correlation Analysis finds linear combinati
 in the Genetics and Geodemographic matrices.
 
 ## Running COGG: 
-
 You have to clone/download the codes and run the COGG_Wrapper.m 
+
+### Formatting PCs
 Edit the COGG_Wrapper.m to include the paths to your files containing the Principal Components in the following
+
 ````format: SampleID PC1 PC2 PC3 PC4 PC5 .. PCp Population````
+
 Where, SampleID is the id of each sample under study and the last column contains the population to which the 
 samples belong. The PC1-PCp, are the number of principal components under consideration. 
 
+### Formatting Geodemographic information
 Also include the link to the file containing external information of geographical coordinates and external 
 information which influence the genetics of those populations. Our methods needs a one-to-one relationship
 with the external factors and the sample. That is, each sample can belong to only one language group and caste 
 group in our case. 
+Our file is formatted as follows: 
+```` Population Name #ofSamples State/Province Region Language Caste Latitude Longitude Dataset ```` 
+
+Change line 
 
 Also you have to edit the value of p and enter the desired number of principal components. 
 
